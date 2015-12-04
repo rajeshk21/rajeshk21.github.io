@@ -58,10 +58,11 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Welcome to my homepage</h1>
-        <p class="lead">Page is Under Construction</p>
+        <h1>JUDGEMENT</h1>
+        <p class="lead">SCOREBOARD</p>
 		<output type="text" id="mytext">
       </div>
+	  <div id="id01"></div>
 	 
 
     </div><!-- /.container -->
@@ -79,9 +80,27 @@
 	  <script >
   function gotData(data) {
     console.log(data);
-	var conv = JSON.stringify(data);
-	var elem = document.getElementById("mytext");
-    elem.value = conv;
+	//var conv = JSON.stringify(data);
+	//alert(data);
+	//var playerArray = JSON.parse(data);
+	//alert(playerArray.length);
+	    var resp = data;
+		var out = '<table><tr><th  style="padding-right: 10px">Name</th><th>Score</th></tr>' 
+	   for(k in resp)
+        {
+          //alert(resp[k].name);
+		    //    alert(resp[k].score);
+		out +=	'<tr>'
+		out +='<td style="padding-right: 10px">'+resp[k].name+'</td>';
+		
+		out +='<td>'+resp[k].score+'</td>';
+	    out +=	'</tr>'
+	// And so on
+        }
+		out += '</table>';
+			document.getElementById("id01").innerHTML = out;
+	//var elem = document.getElementById("mytext");
+   // elem.value = conv;
   }
 </script>
 	<script src=" https://magicappio.firebaseio.com/users.json?callback=gotData"></script>
