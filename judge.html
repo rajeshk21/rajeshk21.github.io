@@ -47,7 +47,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
+			<li><a href="#">Geek Stuff</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -59,10 +60,10 @@
 
       <div class="starter-template">
         <h1>JUDGEMENT</h1>
-        <p class="lead">SCOREBOARD</p>
+        <p class="lead">GAME RANKING</p>
 		<output type="text" id="mytext">
       </div>
-	  <div id="id01"></div>
+	  <div id="id01" class="table-responsive"></div>
 	 
 
     </div><!-- /.container -->
@@ -85,13 +86,15 @@
 	//var playerArray = JSON.parse(data);
 	//alert(playerArray.length);
 	    var resp = data;
-		var out = '<table><tr><th  style="padding-right: 10px">Name</th><th>Score</th></tr>' 
+		var out = '<table class="table"><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th></tr>' 
 	   for(k in resp)
         {
           //alert(resp[k].name);
 		    //    alert(resp[k].score);
 		out +=	'<tr>'
-		out +='<td style="padding-right: 10px">'+resp[k].name+'</td>';
+	out +='<td style="padding-right: 20px">'+resp[k].level+'</td>';
+		
+	out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
 		
 		out +='<td>'+resp[k].score+'</td>';
 	    out +=	'</tr>'
