@@ -13,12 +13,15 @@
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/style.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
+	
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -47,8 +50,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-			<li><a href="#">Judgement</a></li>
+            <li><a href="index.html">Home</a></li>
+			<li class="active"><a href="#">Judgement</a></li>
             <li><a href="#about">AlertMagic</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -66,7 +69,7 @@
 		<output type="text" id="mytext">
       </div>
 	  <div id="id01" class="table-responsive"></div>
-	 
+
 
     </div><!-- /.container -->
 
@@ -78,6 +81,8 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 
     <script src="dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="dist/js/jquery-latest.js"></script> 
+<script type="text/javascript" src="dist/js/jquery.tablesorter.js"></script> 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 	  <script >
@@ -88,7 +93,7 @@
 	//var playerArray = JSON.parse(data);
 	//alert(playerArray.length);
 	    var resp = data;
-		var out = '<table class="table"><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th></tr>' 
+		var out = '<table id="result_tb"  class="tablesorter"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th></tr></thead>' 
 	   for(k in resp)
         {
           //alert(resp[k].name);
@@ -108,7 +113,15 @@
    // elem.value = conv;
   }
 </script>
-	<script src=" https://magicappio.firebaseio.com/users.json?callback=gotData"></script>
+<script>
+$(document).ready(function() 
+    { 
+        $("#result_tb").tablesorter(); 
+    } 
+); 
+  </script>
+
+<script src=" https://magicappio.firebaseio.com/users.json?callback=gotData"></script>
 
   </body>
 </html>
