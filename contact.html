@@ -6,22 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="rajeshk21@gmail.com">
     <link rel="icon" href="favicon.ico">
 
     <title>RK... Space</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="dist/css/style.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-	
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
-	
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -51,30 +48,32 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
-			 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">MagicApps <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">MagicApps <span class="caret"></span></a>
 			   <ul class="dropdown-menu">
-            <li class="active"><a href="judge.html">Judgement</a></li>
-             <li><a href="amagic.html">AlertMagic</a></li>
+            <li><a href="judge.html">Judgement</a></li>
+            <li><a href="amagic.html">AlertMagic</a></li>
           </ul>
-      
 			</li>
-         <li><a href="geek.html">Geek Stuff</a></li>
-            <li><a href="contact.html">Contact</a></li>
+			<li><a href="geek.html">Geek Stuff</a></li>
+			
+            <li class="active"><a href="#">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+     
+	  </div>
     </nav>
-	
-	
 
     <div class="container">
 
       <div class="starter-template">
-        <h1>JUDGEMENT</h1>
-        <p class="lead">GAME RANKING</p>
-		<output type="text" id="mytext">
+        <h1>Contact me</h1>
+        <p class="lead">rajeshk21@gmail.com</p>
+			 <a href="https://in.linkedin.com/pub/rajesh-kumar/3/7a6/a6a">
+      
+          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="View Rajesh Kumar's profile on LinkedIn">
+        
+    </a>
       </div>
-	  <div id="id01" class="table-responsive"></div>
 
 
     </div><!-- /.container -->
@@ -85,49 +84,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-
     <script src="dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="dist/js/jquery-latest.js"></script> 
-<script type="text/javascript" src="dist/js/jquery.tablesorter.js"></script> 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-	  <script >
-  function gotData(data) {
-    console.log(data);
-	//var conv = JSON.stringify(data);
-	//alert(data);
-	//var playerArray = JSON.parse(data);
-	//alert(playerArray.length);
-	    var resp = data;
-		var out = '<table id="result_tb"  class="tablesorter"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th></tr></thead>' 
-	   for(k in resp)
-        {
-          //alert(resp[k].name);
-		    //    alert(resp[k].score);
-		out +=	'<tr>'
-	out +='<td style="padding-right: 20px">'+resp[k].level+'</td>';
-		
-	out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
-		
-		out +='<td>'+resp[k].score+'</td>';
-	    out +=	'</tr>'
-	// And so on
-        }
-		out += '</table>';
-			document.getElementById("id01").innerHTML = out;
-	//var elem = document.getElementById("mytext");
-   // elem.value = conv;
-  }
-</script>
-<script>
-$(document).ready(function() 
-    { 
-        $("#result_tb").tablesorter(); 
-    } 
-); 
-  </script>
-
-<script src=" https://magicappio.firebaseio.com/users.json?callback=gotData"></script>
 
   </body>
 </html>

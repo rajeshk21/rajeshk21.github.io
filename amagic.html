@@ -53,12 +53,12 @@
             <li><a href="index.html">Home</a></li>
 			 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">MagicApps <span class="caret"></span></a>
 			   <ul class="dropdown-menu">
-            <li class="active"><a href="judge.html">Judgement</a></li>
-             <li><a href="amagic.html">AlertMagic</a></li>
+            <li><a href="judge.html">Judgement</a></li>
+            <li class="active"><a href="#">AlertMagic</a></li>
           </ul>
-      
 			</li>
-         <li><a href="geek.html">Geek Stuff</a></li>
+			<li><a href="geek.html">Geek Stuff</a></li>
+          
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -70,9 +70,7 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>JUDGEMENT</h1>
-        <p class="lead">GAME RANKING</p>
-		<output type="text" id="mytext">
+        <h1>COMING SOON!!!</h1>
       </div>
 	  <div id="id01" class="table-responsive"></div>
 
@@ -91,41 +89,7 @@
 <script type="text/javascript" src="dist/js/jquery.tablesorter.js"></script> 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-	  <script >
-  function gotData(data) {
-    console.log(data);
-	//var conv = JSON.stringify(data);
-	//alert(data);
-	//var playerArray = JSON.parse(data);
-	//alert(playerArray.length);
-	    var resp = data;
-		var out = '<table id="result_tb"  class="tablesorter"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th></tr></thead>' 
-	   for(k in resp)
-        {
-          //alert(resp[k].name);
-		    //    alert(resp[k].score);
-		out +=	'<tr>'
-	out +='<td style="padding-right: 20px">'+resp[k].level+'</td>';
-		
-	out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
-		
-		out +='<td>'+resp[k].score+'</td>';
-	    out +=	'</tr>'
-	// And so on
-        }
-		out += '</table>';
-			document.getElementById("id01").innerHTML = out;
-	//var elem = document.getElementById("mytext");
-   // elem.value = conv;
-  }
-</script>
-<script>
-$(document).ready(function() 
-    { 
-        $("#result_tb").tablesorter(); 
-    } 
-); 
-  </script>
+	 
 
 <script src=" https://magicappio.firebaseio.com/users.json?callback=gotData"></script>
 
