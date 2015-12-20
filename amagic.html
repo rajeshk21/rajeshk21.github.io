@@ -60,6 +60,7 @@
 			<li><a href="geek.html">Geek Stuff</a></li>
           
             <li><a href="contact.html">Contact</a></li>
+			 <li><a data-toggle="modal" href="#myModal">Feedback</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -68,13 +69,44 @@
 	
 
     <div class="container">
-	 <p class="lead">Download the AlertMagic app from</p>
-<a href="https://play.google.com/store/apps/details?id=com.rajeshk21.iitb.alertmagic&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"><img alt="Get it on Google Play" style="width:240px;height:62px" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" /></a>
-      <div class="starter-template">
+	  <div class="starter-template">
+	  <img src="assets/img/amagic1.jpg" alt="HTML5 Icon" class="img-responsive" usemap="#planetmap">
+	  <map name="planetmap">
+  <area shape="rect" coords="900,350,1170,400" alt="Sun" href="https://play.google.com/store/apps/details?id=com.rajeshk21.iitb.alertmagic">
+   
+</map>
+T
         <h1>COMING SOON!!!</h1>
       </div>
 	  <div id="id01" class="table-responsive"></div>
 
+	 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon"></span> Feedback</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="msg"><span class="glyphicon"></span> Message</label>
+              <input type="text" class="form-control" id="msg" placeholder="Enter Message">
+            </div>
+              <button id="feedback" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off" ></span> Send</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
 
     </div><!-- /.container -->
 
@@ -91,8 +123,24 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 	 
-
-<script src=" https://magicappio.firebaseio.com/users.json?callback=gotData"></script>
+	<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script>
+	var myFirebaseRef = new Firebase("https://rajeshk.firebaseio.com/");
+	$(document).ready(function(){
+    $("#feedback").click(function(){
+	    var msg = $("#msg").val();
+		var name = $("#usrname").val();
+		var usersRef = myFirebaseRef.child("users");
+		var userRef = usersRef.child(name);
+		var msgRef = userRef.child(msg);
+			msgRef.set({
+			message: msg
+					   });
+			});
+		
+		});
+</script>
 
   </body>
 </html>

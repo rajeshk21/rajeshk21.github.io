@@ -57,6 +57,7 @@
 			<li><a href="geek.html">Geek Stuff</a></li>
 			
             <li class="active"><a href="#">Contact</a></li>
+			 <li><a data-toggle="modal" href="#myModal">Feedback</a></li>
           </ul>
         </div><!--/.nav-collapse -->
      
@@ -75,6 +76,33 @@
     </a>
       </div>
 
+	 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon"></span> Feedback</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="msg"><span class="glyphicon"></span> Message</label>
+              <input type="text" class="form-control" id="msg" placeholder="Enter Message">
+            </div>
+              <button id="feedback" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off" ></span> Send</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
 
     </div><!-- /.container -->
 
@@ -86,6 +114,23 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
+	<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script>
+	var myFirebaseRef = new Firebase("https://rajeshk.firebaseio.com/");
+	$(document).ready(function(){
+    $("#feedback").click(function(){
+	    var msg = $("#msg").val();
+		var name = $("#usrname").val();
+		var usersRef = myFirebaseRef.child("users");
+		var userRef = usersRef.child(name);
+		var msgRef = userRef.child(msg);
+			msgRef.set({
+			message: msg
+					   });
+			});
+		
+		});
+</script>
   </body>
 </html>

@@ -23,8 +23,6 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
-	<script src="dist/js/firebase.js"></script>
-	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -120,7 +118,7 @@
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon"></span> Feedback</h4>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
@@ -129,11 +127,19 @@
               <input type="text" class="form-control" id="usrname" placeholder="Enter email">
             </div>
             <div class="form-group">
-              <label for="msg"><span class="glyphicon"></span> Message</label>
-              <input type="text" class="form-control" id="msg" placeholder="Enter Message">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
             </div>
-              <button id="feedback" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off" ></span> Send</button>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
         </div>
       </div>
       
@@ -149,24 +155,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
-	<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script>
-	var myFirebaseRef = new Firebase("https://rajeshk.firebaseio.com/");
-	$(document).ready(function(){
-    $("#feedback").click(function(){
-	    var msg = $("#msg").val();
-		var name = $("#usrname").val();
-		var usersRef = myFirebaseRef.child("users");
-		var userRef = usersRef.child(name);
-		var msgRef = userRef.child(msg);
-			msgRef.set({
-			message: msg
-					   });
-			});
-		
-		});
-</script>
 
   </body>
 </html>
