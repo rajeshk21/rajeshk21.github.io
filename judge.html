@@ -130,6 +130,7 @@
     $("#feedback").click(function(){
 	    var msg = $("#msg").val();
 		var name = $("#usrname").val();
+    var id = $("#id").val();
 		var usersRef = myFirebaseRef.child("users");
 		var userRef = usersRef.child(name);
 		var msgRef = userRef.child(msg);
@@ -148,17 +149,27 @@
 	//var playerArray = JSON.parse(data);
 	//alert(playerArray.length);
 	    var resp = data;
-		var out = '<table id="result_tb"  class="tablesorter"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th></tr></thead>' 
+		var out = '<table id="result_tb"  class="tablesorter"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th><th>Link</th></tr></thead>' 
 	   for(k in resp)
         {
           //alert(resp[k].name);
 		    //    alert(resp[k].score);
+    //   
 		out +=	'<tr>'
 	out +='<td style="padding-right: 20px">'+resp[k].level+'</td>';
 		
-	out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
+	   out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
 		
 		out +='<td>'+resp[k].score+'</td>';
+
+    if (resp[k].id !=  null) {
+     out +='<td style="padding-right: 20px"><a href="http://facebook.com/'+resp[k].id+'" target="_blank"><img src="assets/img/fb_icon_24.png"/></a></td>';
+   }
+
+ if (resp[k].id ==  null) {
+     out +='<td style="padding-right: 20px">Publish score again to enable</td>';
+   }
+
 	    out +=	'</tr>'
 	// And so on
         }
