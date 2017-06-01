@@ -27,6 +27,8 @@
 
     <!-- Theme CSS -->
     <link href="css/new-age.css" rel="stylesheet">
+    <link href="css/custom_styles.css" rel="stylesheet">
+    <link href="css/full-slider.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,13 +36,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script>
-      $("#logo-image img").
-    </script>
+    <script src="js/firebase.js"></script>
 </head>
 
 <body id="page-top">
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -50,11 +49,6 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
                     <div id="logo-image" style="width: 150px;">
-                      <!-- <div style="height: 30px;
-    width: 20%;
-    background-image: url(img/judgement.png);
-    background-size: contain;
-    float: left;"></div> -->
                         <img src="img/judgement.png" style="width: 20%">
                         <span>RK space</span>
                     </div>
@@ -65,10 +59,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="#download">Alert Magic</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll" href="#features">Features</a>
+                    </li> -->
+                    <li>
+                        <a class="page-scroll" href="#judgement">Judgement</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -93,11 +90,28 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
+                        <div class="device-mockup nexus6 portrait">
                             <div class="device">
                                 <div class="screen">
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
+                                    <!--<img src="img/demo-screen-1.jpg" class="img-responsive" alt="">-->
+
+                                    <!-- Full Page Image Background Carousel Header -->
+                                    <header id="myCarousel" class="carousel slide">
+                                        <!-- Wrapper for Slides -->
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <div class="fill" style="background-image:url('img/1.png');"></div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="fill" style="background-image:url('img/2.png');"></div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="fill" style="background-image:url('img/3.png');"></div>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <!-- End of Full Page Image Background Carousel Header -->
                                 </div>
                                 <div class="button">
                                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -115,19 +129,18 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                    <p>Our app is available on any mobile device! Download now to get started!</p>
+                    <p>Alert Magic is available on any android device. Download now to get started!</p>
                     <div class="badges">
-                        <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.rajeshk21.iitb.judgement&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1">
-                            <img src="img/google-play-badge.svg" alt="Get it on Google Play">
-                        </a>
-                        <!-- <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
+                      <a target="_blank" class="badge-link" href="https://play.google.com/store/apps/dev?id=5343844962586615765&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                        <img src="img/google-play-badge.svg" alt="Get it on Google Play">
+                      </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <!--<section id="features" class="features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -144,10 +157,10 @@
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
                                 <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+
                                     <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
                                 <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+
                                 </div>
                             </div>
                         </div>
@@ -191,13 +204,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
-    <section class="cta">
+    <section id="judgement" class="cta">
         <div class="cta-content">
             <div class="container">
-                <h2>Stop waiting.<br>Start building.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
+                <h2>Judgement<br>Let's Play!</h2>
+                <a id="view_scores" href="judge.html" target="_blank" class="btn btn-outline btn-xl page-scroll">View Scores ></a>
             </div>
         </div>
         <div class="overlay"></div>
@@ -217,7 +230,7 @@
                     <a href="#"><i class="fa fa-google-plus"></i></a>
                 </li>
                 <li class="social-email">
-                    <a href="#"><i class="fa fa-envelope"></i></a>
+                    <a data-toggle="modal" href="#myModal"><i class="fa fa-envelope"></i></a>
                 </li>
             </ul>
         </div>
@@ -240,6 +253,33 @@
         </div>
     </footer>
 
+    <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+     <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header" style="padding:35px 50px;">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4><span class="glyphicon"></span> Feedback</h4>
+         </div>
+         <div class="modal-body" style="padding:40px 50px;">
+           <form role="form">
+             <div class="form-group">
+               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email address</label>
+               <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+             </div>
+             <div class="form-group">
+               <label for="msg"><span class="glyphicon glyphicon-pencil"></span> Message</label>
+               <textarea rows="4" cols="50" class="form-control" id="msg" placeholder="Enter Message"></textarea>
+               <!-- <input type="text" class="form-control" id="msg" placeholder="Enter Message"> -->
+             </div>
+               <button id="feedback" type="submit" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-send" ></span> Send</button>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+
     <!-- jQuery -->
     <script src="lib/jquery/jquery.min.js"></script>
 
@@ -251,6 +291,30 @@
 
     <!-- Theme JavaScript -->
     <script src="js/new-age.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 3000 //changes the speed
+    })
+    </script>
+
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script>
+    	var myFirebaseRef = new Firebase("https://rajeshk.firebaseio.com/");
+    	$(document).ready(function(){
+        $("#feedback").click(function(){
+    	    var msg = $("#msg").val();
+          var name = $("#usrname").val();
+          var usersRef = myFirebaseRef.child("users");
+          var userRef = usersRef.child(name);
+          var msgRef = userRef.child(msg);
+    			msgRef.set({
+            message: msg
+    			});
+    		});
+    	});
+    </script>
 
 </body>
 

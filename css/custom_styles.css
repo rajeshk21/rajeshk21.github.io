@@ -1,0 +1,25 @@
+/* Custom Styles */
+
+.badges .badge-link img {
+	height: 60px;
+}
+
+#view_scores:hover, #view_scores:focus, #view_scores:active, #view_scores.active {
+	border: none !important;
+	background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #7B4296), color-stop(0.91, #AB3363) ) !important;
+	background-image: -o-linear-gradient(bottom, #7B4296 0%, #AB3363 91%) !important;
+	background-image: -moz-linear-gradient(bottom, #7B4296 0%, #AB3363 91%) !important;
+	background-image: -webkit-linear-gradient(bottom, #7B4296 0%, #AB3363 91%) !important;
+	background-image: -ms-linear-gradient(bottom, #7B4296 0%, #AB3363 91%) !important;
+	background-image: linear-gradient(to bottom, #7B4296 0%, #AB3363 91%) !important;
+}
+
+.modal-header, h4, .close {
+		background-color: #5cb85c;
+		color:white !important;
+		text-align: center;
+		font-size: 30px;
+}
+.modal-footer {
+		background-color: #f9f9f9;
+}

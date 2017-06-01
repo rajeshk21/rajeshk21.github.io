@@ -709,6 +709,33 @@
 	top: 12.2641509%; bottom: 12.2641509%; left: 10.5403012%; right: 18.6005314%;
 }
 
+/* Nexus 6 */
+.device-mockup.nexus6,
+.device-mockup.nexus6.portrait {
+	padding-bottom: 184.521739%;;
+}
+
+.device-mockup.nexus6.landscape {
+	padding-bottom: 63.6678201%;
+}
+
+.device-mockup.nexus6 > .device,
+.device-mockup.nexus6.portrait > .device {
+	background-image: url("nexus6/nexus_6_port.png");
+}
+
+.device-mockup.nexus6.landscape > .device {
+	background-image: url("nexus6/nexus_6_land.png");
+}
+
+.device-mockup.nexus6 > .device > .screen,
+.device-mockup.nexus6.portrait > .device > .screen {
+	top: 10.136574%; bottom: 10.789352%; left: 9.568116%; right: 8.768116%;
+}
+
+.device-mockup.nexus6.landscape > .device > .screen {
+	top: 13.7681159%; bottom: 13.7681159%; left: 13.0911188%; right: 13.0911188%;
+}
 
 /* Nexus 7 */
 .device-mockup.nexus7,
