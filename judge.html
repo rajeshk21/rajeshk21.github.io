@@ -117,20 +117,20 @@
       	//var playerArray = JSON.parse(data);
       	//alert(playerArray.length);
 	      var resp = data;
-		    var out = '<div id="BEGINNER"><table id="result_tb"  class="tablesorter" border="1"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th><th>Link</th></tr></thead>'
+		    var out = '<div id="BEGINNER"><table id="result_tb"  class="tablesorter" border="1"> <thead><tr><th>Level</th><th>Name</th><th>Score</th><th>Link</th></tr></thead>'
     	   for(k in resp) {
           //alert(resp[k].name);
     		  //alert(resp[k].score);
           if (resp[k].level == 'BEGINNER') {
              out +=	'<tr>'
-             out +='<td style="padding-right: 20px">'+resp[k].level+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>';
-             out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
+             out +='<td>'+resp[k].level+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>';
+             out +='<td>'+resp[k].name+'</td>';
              out +='<td>'+resp[k].score+'</td>';
               if (resp[k].id !=  null) {
-                 out +='<td style="padding-right: 20px"><a href="http://facebook.com/'+resp[k].id+'" target="_blank"><img src="img/fb_icon_24.png"/></a></td>';
+                 out +='<td><a href="http://facebook.com/'+resp[k].id+'" target="_blank"><img src="img/fb_icon_24.png"/></a></td>';
               }
               if (resp[k].id ==  null) {
-                 out +='<td style="padding-right: 20px">Publish score again to enable</td>';
+                 out +='<td>Publish score again to enable</td>';
               }
         	    out +=	'</tr>'
     	     // And so on
@@ -139,20 +139,20 @@
     		out += '</table></div>';
 
         // 2nd Table
-        out += '<div id="INTER"><table id="result_tb2"  class="tablesorter" border="1"> <thead><tr><th  style="padding-right: 20px">Level</th><th  style="padding-right: 20px">Name</th><th>Score</th><th>Link</th></tr></thead>'
+        out += '<div id="INTER"><table id="result_tb2" class="tablesorter" border="1"> <thead><tr><th>Level</th><th>Name</th><th>Score</th><th>Link</th></tr></thead>'
         for(k in resp) {
           //alert(resp[k].name);
           //alert(resp[k].score);
           if (resp[k].level != 'BEGINNER') {
             out +=  '<tr>'
-            out +='<td style="padding-right: 20px">'+resp[k].level+'</td>';
-            out +='<td style="padding-right: 20px">'+resp[k].name+'</td>';
+            out +='<td>'+resp[k].level+'</td>';
+            out +='<td>'+resp[k].name+'</td>';
             out +='<td>'+resp[k].score+'</td>';
             if (resp[k].id !=  null) {
-              out +='<td style="padding-right: 20px"><a href="http://facebook.com/'+resp[k].id+'" target="_blank"><img src="img/fb_icon_24.png"/></a></td>';
+              out +='<td><a href="http://facebook.com/'+resp[k].id+'" target="_blank"><img src="img/fb_icon_24.png"/></a></td>';
             }
             if (resp[k].id ==  null) {
-              out +='<td style="padding-right: 20px">Publish score again to enable</td>';
+              out +='<td>Publish score again to enable</td>';
             }
             out +=  '</tr>'
             // And so on
