@@ -12,7 +12,7 @@ table.tablesorter {
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	border: 0;
 	font-size: 10pt;
-	padding: 4px;
+	padding: 7px;
 }
 table.tablesorter thead tr .header {
 	background-image: url(../img/bg.gif);
@@ -34,6 +34,7 @@ table.tablesorter tbody tr:nth-of-type(odd) {
 	background: #e9e9e9;
 }
 table.tablesorter tbody td {
+	height: 33px;
 	color: #3D3D3D;
 	padding: 4px;
 	vertical-align: top;
