@@ -37,7 +37,8 @@ table.tablesorter tbody td {
 	height: 33px;
 	color: #3D3D3D;
 	padding: 4px;
-	vertical-align: top;
+	font-weight: 600;
+    	font-size: 12px;
 }
 table.tablesorter tbody tr.odd td {
 	background-color:#F0F0F6;
