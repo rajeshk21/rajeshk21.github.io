@@ -7,7 +7,7 @@ table.tablesorter {
 	font-size: 8pt;
 	width: 100%;
 	text-align: left;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	border: 0;
