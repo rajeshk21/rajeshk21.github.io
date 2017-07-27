@@ -7,20 +7,25 @@ table.tablesorter {
 	font-size: 8pt;
 	width: 100%;
 	text-align: left;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
-	background-color: #e6EEEE;
 	border: 0;
 	font-size: 10pt;
 	padding: 4px;
 }
 table.tablesorter thead tr .header {
 	background-image: url(../img/bg.gif);
-	background-color: #ea6153;
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;
     	color: #ffffff;
+}
+table#result_tb thead tr {
+	background-color: #ea6153;
+}
+table#result_tb2 thead tr {
+	background-color: #27ae60;
 }
 table.tablesorter tbody tr {
 	background: #f6f6f6;
